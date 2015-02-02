@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="quotes">
   <head>
     <meta charset="utf-8">
-    <title>Untitled</title>
+    <title>Inspirational quotes</title>
+    <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js></script>
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    
+    <ul class="quote-list" ng-controller="quote-list">
+      <li ng-repeat="quote in quotes">
+        <p>{{quote.text}}</p>
+        <footer>- {{quote.author}}</footer>
+        <div class="stars" ng-model=stars>{{quote.stars}}</div>
+      </li>
+      <form ng-submit="addQuote()" class="add-quote">
+        <input type="text" ng-model="newQuoteText" placeholder="Add new quote">
+        <input type="text" ng-model="newQuoteAuthor" placeholder="Author">
+        <input type="submit" value="Add">
+      </form>
+    </ul>
+
+
+
     <script src="main.js"></script>
 
   </body>
