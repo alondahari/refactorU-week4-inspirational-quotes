@@ -1,3 +1,7 @@
+body{
+  padding: 10px;
+}
+
 ul{
   list-style: none;
   padding: 0;
@@ -19,7 +23,7 @@ ul{
 }
 .quote-list p{
   margin: 5px;
-  width: 80%;
+  width: 70%;
 }
 
 .quote-list footer{
@@ -52,4 +56,8 @@ ul{
 .add-quote{
   margin-top: 10px;
   text-align: center;
+}
+
+.sorting{
+  font-size: 13px;
 }

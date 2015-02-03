@@ -10,7 +10,12 @@
 
   <body>
     <ul class="quote-list" ng-controller="quote-list">
-      <li class="quote-li" ng-repeat="quote in quotes">
+      <p class="sorting">Sort by: 
+        <a href="" ng-click="predicate='stars';reverse=!reverse">Rating</a> 
+        <a href="" ng-click="predicate='text';reverse=!reverse">Quote</a> 
+        <a href="" ng-click="predicate='author';reverse=!reverse">Author</a>
+      </p>
+      <li class="quote-li" ng-repeat="quote in quotes | orderBy:predicate:reverse">
         <p>{{quote.text}}</p>
         <footer>- {{quote.author}}</footer>
         <ul class="stars">

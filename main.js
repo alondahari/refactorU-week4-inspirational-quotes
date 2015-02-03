@@ -8,6 +8,9 @@ angular.module('quotes', [])
       }
     ];
 
+    $scope.predicate = 'stars';
+    $scope.reverse = true;
+
     $scope.addQuote = function () {
       $scope.quotes.push({
         text: $scope.newQuoteText,
