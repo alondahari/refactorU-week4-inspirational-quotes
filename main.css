@@ -15,7 +15,7 @@ ul{
 
 .quote-li{
   position: relative;
-  background-color: #80a9e9;
+  background-color: rgba(198, 200, 255, .6);
   padding: 10px;
   border-radius: 10px;
   overflow: hidden;
