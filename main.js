@@ -32,4 +32,10 @@ angular.module('quotes', [])
     $scope.setStars = function (quote) {
       quote.stars = this.$index + 1;
     };
+
+    $scope.removeQuote = function(quote) {
+      $scope.quotes = $scope.quotes.filter(function(val) {
+        return val.$$hashKey != quote.$$hashKey;
+      });
+    }
 }]);

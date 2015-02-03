@@ -15,7 +15,8 @@
         <a href="" ng-click="predicate='text';reverse=!reverse">Quote</a> 
         <a href="" ng-click="predicate='author';reverse=!reverse">Author</a>
       </p>
-      <li class="quote-li" ng-repeat="quote in quotes | orderBy:predicate:reverse">
+      <li class="quote-li clearfix" ng-repeat="quote in quotes | orderBy:predicate:reverse">
+        <a href="" class="dismiss-button" ng-click="removeQuote(quote)">X</a>
         <p>{{quote.text}}</p>
         <footer>- {{quote.author}}</footer>
         <ul class="stars">
