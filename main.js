@@ -4,7 +4,7 @@ angular.module('quotes', [])
       {
         text: 'The bear necessities will come to you',
         author: 'Baloo',
-        stars: 4
+        stars: 3
       }
     ];
 
@@ -12,9 +12,17 @@ angular.module('quotes', [])
       $scope.quotes.push({
         text: $scope.newQuoteText,
         author: $scope.newQuoteAuthor,
-        stars: 0
+        stars: formatStars(0)
       });
       $scope.newQuoteText = '';
       $scope.newQuoteAuthor = '';
+    };
+
+    $scope.formatStars = function (num) {
+      var arr = new Array(5);
+      for (var i = 0; i < num; i++) {
+        arr[i] = 'star-filled';
+      }
+      return arr;
     };
 }]);
