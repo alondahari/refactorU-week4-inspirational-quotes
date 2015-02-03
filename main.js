@@ -12,7 +12,7 @@ angular.module('quotes', [])
       $scope.quotes.push({
         text: $scope.newQuoteText,
         author: $scope.newQuoteAuthor,
-        stars: formatStars(0)
+        stars: 1
       });
       $scope.newQuoteText = '';
       $scope.newQuoteAuthor = '';
@@ -24,5 +24,9 @@ angular.module('quotes', [])
         arr[i] = 'star-filled';
       }
       return arr;
+    };
+
+    $scope.setStars = function (quote) {
+      quote.stars = this.$index + 1;
     };
 }]);

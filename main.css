@@ -28,18 +28,14 @@ ul{
 
 .stars{
   position: absolute;
-  top: 15px;
+  top: 14px;
   right: 5px;
-}
-
-.add-quote{
-  margin-top: 10px;
-  text-align: center;
 }
 
 .star{
   float: right;
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .star-svg {
@@ -51,4 +47,9 @@ ul{
 
 .star-filled {
   fill: yellow;
+}
+
+.add-quote{
+  margin-top: 10px;
+  text-align: center;
 }
