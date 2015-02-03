@@ -4,44 +4,19 @@
     <meta charset="utf-8">
     <title>Inspirational quotes</title>
     <script src=https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
   </head>
 
   <body>
-    <ul class="quote-list" ng-controller="quote-list">
-      <p class="sorting">Sort by: 
-        <a href="" ng-click="predicate='stars';reverse=!reverse">Rating</a> 
-        <a href="" ng-click="predicate='text';reverse=!reverse">Quote</a> 
-        <a href="" ng-click="predicate='author';reverse=!reverse">Author</a>
-      </p>
-      <li class="quote-li clearfix" ng-repeat="quote in quotes | orderBy:predicate:reverse">
-        <a href="" class="dismiss-button" ng-click="removeQuote(quote)">X</a>
-        <p>{{quote.text}}</p>
-        <footer>- {{quote.author}}</footer>
-        <ul class="stars">
-          <li class="star" ng-repeat="star in formatStars(quote.stars) track by $index" ng-click="setStars(quote)">
-            <svg version="1.1"
-               width="13px" height="13px" viewBox="0 0 112 106.525">
-            <path class="star-svg {{star}}" d="M81.564,67.186l9.043,39.336L56,85.759l-34.607,20.768l9.047-39.336L0,40.684l40.203-3.542L56-0.001l15.797,37.143
-              L112,40.684L81.564,67.186z"/>
-            </svg>
-
-          </li>
-        </ul>
-
-      </li>
-      <form ng-submit="addQuote()" class="add-quote">
-        <input type="text" ng-model="newQuoteText" placeholder="Add new quote" required>
-        <input type="text" ng-model="newQuoteAuthor" placeholder="Author" required>
-        <input type="submit" value="Add">
-      </form>
-
-    </ul>
+    
+    <div ng-view></div>
 
 
 
-    <script src="main.js"></script>
 
   </body>
 </html>

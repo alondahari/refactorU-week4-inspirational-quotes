@@ -1,5 +1,6 @@
-angular.module('quotes', [])
-  .controller('quote-list', ['$scope', function ($scope) {
+var quoteListControllers = angular.module('quoteListControllers', [])
+	.controller('QuoteListCtrl', ['$scope', '$http', function ($scope, $http) {
+		
     $scope.quotes = [
       {
         text: 'The bear necessities will come to you',
@@ -38,4 +39,5 @@ angular.module('quotes', [])
         return val.$$hashKey != quote.$$hashKey;
       });
     }
-}]);
+	}]);
+
