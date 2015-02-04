@@ -23,6 +23,16 @@ quoteApp.controller('QuotesCtrl', ['$scope', function ($scope) {
     quote.stars = this.$index + 1;
   };
 
+  $scope.addQuote = function () {
+    $scope.quotes.push({
+      text: $scope.newQuoteText,
+      author: $scope.newQuoteAuthor,
+      stars: 1
+    });
+    $scope.newQuoteText = '';
+    $scope.newQuoteAuthor = '';
+  };
+  
   $scope.removeQuote = function(quote) {
     $scope.quotes = $scope.quotes.filter(function(val) {
       return val.$$hashKey != quote.$$hashKey;
@@ -42,31 +52,22 @@ quoteApp.controller('QuotesCtrl', ['$scope', function ($scope) {
 
 
 
-quoteApp.controller('QuoteListCtrl', ['$scope', function ($scope) {
+// quoteApp.controller('QuoteListCtrl', ['$scope', function ($scope) {
 
-  $scope.addQuote = function () {
-    $scope.quotes.push({
-      text: $scope.newQuoteText,
-      author: $scope.newQuoteAuthor,
-      stars: 1
-    });
-    $scope.newQuoteText = '';
-    $scope.newQuoteAuthor = '';
-  };
-}]);
+// }]);
 
 
-quoteApp.controller('AuthorListCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
-	$scope.author = $routeParams.author;
-    $scope.addQuote = function () {
-    $scope.quotes.push({
-      text: $scope.newQuoteText,
-      author: $scope.author,
-      stars: 1
-    });
-    $scope.newQuoteText = '';
-  };
+// quoteApp.controller('AuthorListCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
+// 	$scope.author = $routeParams.author;
+//     $scope.addQuote = function () {
+//     $scope.quotes.push({
+//       text: $scope.newQuoteText,
+//       author: $scope.author,
+//       stars: 1
+//     });
+//     $scope.newQuoteText = '';
+//   };
 
-}]);
+// }]);
 
 

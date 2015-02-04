@@ -3,11 +3,9 @@ var quoteApp = angular.module('quotes', ['ngRoute'])
   function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/quote-list.html',
-        controller: 'QuoteListCtrl'
+        templateUrl: 'partials/quote-list.html'
       })
       .when('/author/:author', {
-        templateUrl: 'partials/author-list.html',
-        controller: 'AuthorListCtrl'
+        templateUrl: 'partials/quote-list.html'
       });
   }]);
