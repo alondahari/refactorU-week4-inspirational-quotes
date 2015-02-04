@@ -1,5 +1,5 @@
-
 <ul class="quote-list" ng-controller="AuthorListCtrl">
+  <h1></h1>
   <p class="sorting">Sort by: 
     <a href="" ng-click="predicate='stars';reverse=!reverse">Rating</a> 
     <a href="" ng-click="predicate='text';reverse=!reverse">Quote</a> 
@@ -24,7 +24,6 @@
 
   <form ng-submit="addQuote()" class="add-quote">
     <input type="text" ng-model="newQuoteText" placeholder="Add new quote" required>
-    <input type="text" ng-model="newQuoteAuthor" placeholder="Author" required>
     <input type="submit" value="Add">
   </form>
 </ul>

@@ -7,7 +7,7 @@
   <li class="quote-li clearfix" ng-repeat="quote in quotes | orderBy:predicate:reverse">
     <a href="" class="dismiss-button" ng-click="removeQuote(quote)">X</a>
     <p>{{quote.text}}</p>
-    <footer>- <a href="/author">{{quote.author}}</a></footer>
+    <footer>- <a href="#/author/{{quote.author}}">{{quote.author}}</a></footer>
     <ul class="stars">
       <li class="star" ng-repeat="star in formatStars(quote.stars) track by $index" ng-click="setStars(quote)">
         <svg version="1.1"
