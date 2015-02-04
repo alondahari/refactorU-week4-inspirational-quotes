@@ -6,10 +6,14 @@
     <a href="" ng-click="predicate='author';reverse=!reverse" ng-hide="author">Author</a>
   </p>
   <button ng-click="popRandomQuote()" class="random-quote" ng-hide="author">Get a Random Quote!</button>
-  <li class="quote-li clearfix" ng-repeat="quote in quotes | orderBy:predicate:reverse">
-    <a href="" class="dismiss-button" ng-click="removeQuote(quote)">X</a>
+  <li class="quote-li clearfix" ng-repeat="quote in quotes track by $index | orderBy:predicate:reverse">
+    <a href="" class="dismiss-button" ng-click="removeQuote($index)">X</a>
     <p>{{quote.text}}</p>
-    <footer>- <a href="#/author/{{quote.author}}" ng-hide="author">{{quote.author}}</a><span ng-show="author">{{quote.author}}</span></footer>
+    <footer>- 
+      <a href="#/author/{{quote.author}}" ng-hide="author">{{quote.author}}</a>
+      <span ng-show="author">{{quote.author}}</span>
+    </footer>
+
     <ul class="stars">
       <li class="star" ng-repeat="star in formatStars(quote.stars) track by $index" ng-click="setStars(quote)">
         <svg version="1.1"

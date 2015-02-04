@@ -1,12 +1,15 @@
 quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
   $scope.author = $routeParams.author;
-  $scope.quotes = [
-    {
-      text: 'The bear necessities in life will come to you',
-      author: 'Baloo',
-      stars: 3
-    }
-  ];
+  $scope.quotes = (Modernizr.localstorage) ?
+    JSON.parse(localStorage.quotes) || [] :
+    [
+      {
+        text: 'The bear necessities in life will come to you',
+        author: 'Baloo',
+        stars: 3,
+        id: _.uniqueId()
+      }
+    ];
 
   $scope.predicate = 'stars';
   $scope.reverse = true;
@@ -31,12 +34,11 @@ quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $
     });
     $scope.newQuoteText = '';
     $scope.newQuoteAuthor = '';
+    console.log($scope.quotes[0]);
   };
 
-  $scope.removeQuote = function(quote) {
-    $scope.quotes = $scope.quotes.filter(function(val) {
-      return val.$$hashKey != quote.$$hashKey;
-    });
+  $scope.removeQuote = function($index) {
+    $scope.quotes.splice($index, 1);
   };
 
   $scope.popRandomQuote = function(){
@@ -52,8 +54,8 @@ quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $
   });
 
   $scope.updateLocalStorage = function(){
-      console.log('test');
     if (Modernizr.localstorage) {
+      localStorage.quotes = JSON.stringify($scope.quotes);
     }
   };
 
