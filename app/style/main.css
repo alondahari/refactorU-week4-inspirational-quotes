@@ -8,12 +8,52 @@ ul{
   margin: 0;
 }
 
+a{
+  text-decoration: none;
+  color: #0000EE;
+}
+
+button, input[type=submit]{
+  padding-top: 5px;
+}
+
 .clearfix:after {
   visibility: hidden;
   display: block;
   font-size: 0;
   content: " ";
   clear: both;
+}
+
+.logo{
+  /*display: inline-block;*/
+  background-color: #A278FF;
+  padding: 15px 20px 10px;
+  border-radius: 20px;
+  width: 321px;
+  margin: 30px auto;
+  color: #000;
+}
+
+.logo:hover{
+  background-color: #874BFF;
+}
+
+.screen{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  background-color: rgba(0,0,0,.7);
+}
+
+.lightbox{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .quote-list{
@@ -62,12 +102,41 @@ ul{
 }
 
 .add-quote{
-  margin-top: 10px;
+  margin-top: 30px;
   text-align: center;
+}
+
+.new-quote-text{
+  width: 80%;
+}
+
+.new-quote-author{
+  margin-top: 5px;
+  width: 68%;
+}
+
+.new-quote-button{
+  padding-bottom: 1px;
+  position: relative;
+  bottom: -2px;
+}
+
+.author-name{
+  text-align: center;
+  text-decoration: underline;
+}
+
+.back-button{
+  float: left;
 }
 
 .sorting{
   font-size: 13px;
+}
+
+.random-quote{
+  float: right;
+  margin-top: -25px;
 }
 
 .dismiss-button{

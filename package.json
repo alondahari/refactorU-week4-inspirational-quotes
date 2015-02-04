@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.0.0-rc6",
-    "gulp": "^3.8.10"
+    "gulp": "^3.8.10",
+    "underscore": "^1.7.0"
   }
 }
