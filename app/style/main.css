@@ -1,0 +1,79 @@
+body{
+  padding: 10px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+}
+
+.quote-list{
+  width: 400px;
+  margin: auto;
+}
+
+.quote-li{
+  position: relative;
+  background-color: rgba(198, 200, 255, .6);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.quote-list p{
+  margin: 5px;
+  width: 70%;
+}
+
+.quote-list footer{
+  margin-top: 8px;
+  text-indent: 20px;
+}
+
+.stars{
+  position: absolute;
+  top: 15px;
+  right: 5px;
+}
+
+.star{
+  float: right;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.star-svg {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 4px;
+
+}
+
+.star-filled {
+  fill: yellow;
+}
+
+.add-quote{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.sorting{
+  font-size: 13px;
+}
+
+.dismiss-button{
+  color: red;
+  position: absolute;
+  top: 40px;
+  right: 12px;
+  text-decoration: none;
+}
