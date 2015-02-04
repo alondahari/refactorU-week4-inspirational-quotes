@@ -1,5 +1,5 @@
-quoteApp.controller('QuotesCtrl', ['$scope', function ($scope) {
-
+quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
+  $scope.author = $routeParams.author;
   $scope.quotes = [
     {
       text: 'The bear necessities in life will come to you',
@@ -32,7 +32,7 @@ quoteApp.controller('QuotesCtrl', ['$scope', function ($scope) {
     $scope.newQuoteText = '';
     $scope.newQuoteAuthor = '';
   };
-  
+
   $scope.removeQuote = function(quote) {
     $scope.quotes = $scope.quotes.filter(function(val) {
       return val.$$hashKey != quote.$$hashKey;
@@ -45,29 +45,18 @@ quoteApp.controller('QuotesCtrl', ['$scope', function ($scope) {
 
   $scope.hideLightbox = function(){
     $scope.randomQuote = null;
+  };
 
+  $scope.$watchCollection('quotes', function(){
+    $scope.updateLocalStorage();
+  });
+
+  $scope.updateLocalStorage = function(){
+      console.log('test');
+    if (Modernizr.localstorage) {
+    }
   };
 
 }]);
-
-
-
-// quoteApp.controller('QuoteListCtrl', ['$scope', function ($scope) {
-
-// }]);
-
-
-// quoteApp.controller('AuthorListCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
-// 	$scope.author = $routeParams.author;
-//     $scope.addQuote = function () {
-//     $scope.quotes.push({
-//       text: $scope.newQuoteText,
-//       author: $scope.author,
-//       stars: 1
-//     });
-//     $scope.newQuoteText = '';
-//   };
-
-// }]);
 
 

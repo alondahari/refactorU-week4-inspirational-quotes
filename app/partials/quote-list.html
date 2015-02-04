@@ -1,14 +1,15 @@
 <ul class="quote-list">
+<h1 class="author-name">Quotes by {{author}}</h1>
   <p class="sorting">Sort by: 
     <a href="" ng-click="predicate='stars';reverse=!reverse">Rating</a> 
     <a href="" ng-click="predicate='text';reverse=!reverse">Alphabet</a> 
-    <a href="" ng-click="predicate='author';reverse=!reverse">Author</a>
+    <a href="" ng-click="predicate='author';reverse=!reverse" ng-hide="author">Author</a>
   </p>
-  <button ng-click="popRandomQuote()" class="random-quote">Get a Random Quote!</button>
+  <button ng-click="popRandomQuote()" class="random-quote" ng-hide="author">Get a Random Quote!</button>
   <li class="quote-li clearfix" ng-repeat="quote in quotes | orderBy:predicate:reverse">
     <a href="" class="dismiss-button" ng-click="removeQuote(quote)">X</a>
     <p>{{quote.text}}</p>
-    <footer>- <a href="#/author/{{quote.author}}">{{quote.author}}</a></footer>
+    <footer>- <a href="#/author/{{quote.author}}" ng-hide="author">{{quote.author}}</a><span ng-show="author">{{quote.author}}</span></footer>
     <ul class="stars">
       <li class="star" ng-repeat="star in formatStars(quote.stars) track by $index" ng-click="setStars(quote)">
         <svg version="1.1"
@@ -24,7 +25,7 @@
 
   <form ng-submit="addQuote()" class="add-quote">
     <input class="new-quote-text" type="text" ng-model="newQuoteText" placeholder="Add new quote" required>
-    <input class="new-quote-author" type="text" ng-model="newQuoteAuthor" placeholder="Author" required>
+    <input class="new-quote-author" type="text" ng-model="newQuoteAuthor" placeholder="Author" required ng-hide="author" value="{{author}}">
     <input class="new-quote-button" type="submit" value="Add">
   </form>
 </ul>
