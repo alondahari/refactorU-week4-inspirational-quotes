@@ -5,7 +5,7 @@
     <a href="" ng-click="predicate='text';reverse=!reverse">Alphabet</a> 
     <a href="" ng-click="predicate='author';reverse=!reverse" ng-hide="author">Author</a>
   </p>
-  <button ng-click="popRandomQuote()" class="random-quote" ng-hide="author">Get a Random Quote!</button>
+    <button ng-click="$parent.showRandomQuote()" class="random-quote" ng-hide="author">Get a Random Quote!</button>
     <li class="quote-li clearfix" ng-repeat="quote in quotes | filter:author | orderBy:predicate:reverse">
     <a href="" class="dismiss-button" ng-click="removeQuote()">X</a>
     <p>{{quote.text}}</p>

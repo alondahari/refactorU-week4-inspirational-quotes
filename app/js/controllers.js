@@ -17,6 +17,7 @@ quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $
   $scope.predicate = 'stars';
   $scope.reverse = true;
 
+
   $scope.formatStars = function (num) {
     var arr = new Array(5);
     for (var i = 0; i < num; i++) {
@@ -37,7 +38,6 @@ quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $
     });
     $scope.newQuoteText = '';
     $scope.newQuoteAuthor = '';
-    console.log($scope.quotes[0]);
   };
 
   $scope.removeQuote = function() {
@@ -47,7 +47,7 @@ quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $
     })
   };
 
-  $scope.popRandomQuote = function(){
+  $scope.showRandomQuote = function(){
     $scope.randomQuote = _.sample($scope.quotes);
   };
 

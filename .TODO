@@ -1,5 +1,4 @@
 Phase one:
-  ☐ fix random quote not working
   ☐ form validation instead of required inputs with HTML5
   ☐ style dismiss better
   ☐ live preview of new quotes
@@ -9,4 +8,5 @@ Phase one:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ fix random quote not working @done (15-02-06 14:48) @project(Phase one)
  ✔ fix removed quotes index bug @done (15-02-06 14:18) @project(Phase one)

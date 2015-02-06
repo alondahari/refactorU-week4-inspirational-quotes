@@ -13,8 +13,10 @@
   <body>
     <a href="#/"><h1 class="logo">Inspirational Quotes!</h1></a>
     <div ng-controller="QuotesCtrl">
+      
       <div ng-view></div>
 
+      
       <div class="screen" ng-show="randomQuote" ng-click="hideLightbox()">
         <div class="lightbox quote-list">
           <div class="quote-li clearfix">
