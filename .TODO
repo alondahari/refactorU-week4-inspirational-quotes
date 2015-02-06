@@ -1,6 +1,12 @@
 Phase one:
+  ☐ fix random quote not working
   ☐ form validation instead of required inputs with HTML5
   ☐ style dismiss better
   ☐ live preview of new quotes
   ☐ add author pic from google
   ☐ stars change on hover
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ fix removed quotes index bug @done (15-02-06 14:18) @project(Phase one)

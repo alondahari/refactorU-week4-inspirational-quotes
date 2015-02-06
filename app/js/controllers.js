@@ -9,8 +9,7 @@ quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $
       {
         text: 'The bear necessities in life will come to you',
         author: 'Baloo',
-        stars: 5,
-        id: _.uniqueId()
+        stars: 5
       }
     ];
   }
@@ -41,8 +40,11 @@ quoteApp.controller('QuotesCtrl', ['$scope', '$routeParams', function ($scope, $
     console.log($scope.quotes[0]);
   };
 
-  $scope.removeQuote = function($index) {
-    $scope.quotes.splice($index, 1);
+  $scope.removeQuote = function() {
+    var clickedQuote = this;
+    $scope.quotes = $scope.quotes.filter(function(val){
+      return !(clickedQuote.quote.$$hashKey == val.$$hashKey);
+    })
   };
 
   $scope.popRandomQuote = function(){
